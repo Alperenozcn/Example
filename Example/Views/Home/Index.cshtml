@@ -1,4 +1,4 @@
-﻿@model Example.Entities.About
+﻿@model Example.Models.IndexViewModel
 
 
 @{
@@ -63,12 +63,13 @@
             <div class="">
                 <span class="text">Hakkımda</span>
                 <h1 class="mb-4 title">
-                    <span class="type-js"><span class="text-js"> @Model.Fullname </span>
-                        </span><br>
-                    @Model.JobTitle
+                    <span class="type-js">
+                        <span class="text-js"> @Model.About.Fullname </span>
+                    </span><br>
+                    @Model.About.JobTitle
                 </h1>
                 <p class="mx-lg-5">
-                    @Model.Description
+                    @Model.About.Description
                 </p>
             </div>
             <div class="row">
@@ -78,10 +79,10 @@
             </div>
             <ul class="follow-social">
                 <li><p>Sosyal Ağlarım</p></li>
-                <li><a href="@Model.LınkedIn" target="_blank"><span class="fa fa-linkedin"></span></a></li>
-                <li><a href="@Model.Gıt" target="_blank"><span class="fa fa-github"></span></a></li>
-                <li><a href="@Model.Instagram" target="_blank"><span class="fa fa-instagram"></span></a></li>
-                <li><a href="@Model.Twitter" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                <li><a href="@Model.About.LınkedIn" target="_blank"><span class="fa fa-linkedin"></span></a></li>
+                <li><a href="@Model.About.Gıt" target="_blank"><span class="fa fa-github"></span></a></li>
+                <li><a href="@Model.About.Instagram" target="_blank"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="@Model.About.Twitter" target="_blank"><span class="fa fa-twitter"></span></a></li>
             </ul>
         </div>
     </div>
@@ -94,39 +95,30 @@
             <div class="row">
                 <div class="col-lg-6">
                     <span class="text">Hizmetler</span>
-                    <h3 class="title-big">Beraber <span>Büyüyelim</span></h3>
+                    <h3 class="title-big">
+    @Model.ServiceSlogan.Title
+    @*Beraber <span>Büyüyelim</span>*@</h3>
                     <p class="mt-4">
-                        Mesleki hayatımda iki seneyi aşkın zamandır kurumsal bir firmada iş analistliği yapmaktayım .
-                        Kendi kendime merak edip programlama ve yazılım dilleri öğrenerek geleceğime daha farklı bir boyut kazandırmayı hedefliyorum.
+                        @Html.Raw(Model.ServiceSlogan.Description)
+                        @*Mesleki hayatımda iki seneyi aşkın zamandır kurumsal bir firmada iş analistliği yapmaktayım .
+                        Kendi kendime merak edip programlama ve yazılım dilleri öğrenerek geleceğime daha farklı bir boyut kazandırmayı hedefliyorum.*@
                     </p>
                     <ul class="service-list mt-md-5 mt-4">
-                        @*<li class="service-link"><a href="#">UI/UX Design and Development</a></li>
-                            <li class="service-link"><a href="#">Branding Design and Identity</a></li>
-                            <li class="service-link"><a href="#">Mobile App Design</a></li>
-                            <li class="service-link"><a href="#">Art, Logo, SVG & Illustration</a></li>
-                            <li class="service-link"><a href="#">3D Modeling & Motion</a></li>
-                            <li class="service-link"><a href="#">PSD Design, Photoshop</a></li>*@
-                        <li>
-                            <a>Html/CSS</a>
-                            <br />
-                            <br />
-                            <a>JavaScript</a>
-                            <br />
-                            <br />
-                            <a>C#</a>
-                            <br />
-                            <br />
-                            <a>SQL</a>
-                            <br />
-                            <br />
-                            <a>Angular</a>
-                        </li>
+
+
+
+                        @foreach (var item in Model.Services)
+                        {
+                            <li class="service-link"><a href="#">@item.Title</a></li>
+                        }
                     </ul>
-                    @*<a href="#url" class="btn btn-style btn-empty p-0">View my all services <span></span></a>*@
+
+
+
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
                     <div class="position-relative">
-                        <img src="~/Theme/assets/@Model.ImagePath" alt="" class="radius-image img-fluid">
+                        <img src="~/Theme/assets/@Model.About.ImagePath" alt="" class="radius-image img-fluid">
                     </div>
                 </div>
             </div>
@@ -150,51 +142,27 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-md-5 mt-4">
-                    <span class="text">Becerilerim</span>
+                    <span class="text">Yetenekler</span>
                     <h3 class="title-big">
-                        Güncel teknolojilerle <span> çalışıyorum.</span>
-
+                    @Model.SkillSlogan.Title
                     </h3>
                     <p class="mt-4">
-                        Ekip içi çalışmaya uyumlu, disiplinli ve eğlenceli birisiyim .
-                        Yeniliğe herzaman açığım.
+                     @Model.SkillSlogan.Description
                     </p>
                     <div class="skills-bars mt-5">
-                        <div class="progress-info">
-                            <h6 class="progress-tittle">Html/CSS</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+
+                        @foreach (var skill in Model.Skills)
+                        {
+                            <div class="progress-info">
+                                <h6 class="progress-tittle">@skill.Title</h6>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: @skill.Rate%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="progress-info">
-                            <h6 class="progress-tittle">JavaScript</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-info">
-                            <h6 class="progress-tittle">C#</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-info">
-                            <h6 class="progress-tittle">SQL</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-info mb-0">
-                            <h6 class="progress-tittle">Angular</h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </div>
+
+                        }
+
                     </div>
                 </div>
             </div>
@@ -515,7 +483,7 @@
 @section scripts{
     <!-- //home page contact section -->
     <script>
-    // When the user scrolls down 20px from the top of the document, show the button
+        // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction()
         };
@@ -543,7 +511,7 @@
 
     <!-- script for tesimonials carousel slider -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $("#owl-demo1").owlCarousel({
                 loop: true,
                 nav: false,
@@ -563,7 +531,7 @@
     <!-- //script for tesimonials carousel slider -->
     <!-- script for portfolio slider -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $("#owl-portfolio").owlCarousel({
                 loop: true,
                 margin: 20,
@@ -588,7 +556,7 @@
     <!-- //script for portfolio slider -->
     <!-- script for featured posts blog slider -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $('.owl-testimonial').owlCarousel({
                 loop: true,
                 margin: 0,
@@ -621,7 +589,7 @@
     <!-- //script for featured posts blog slider -->
     <!-- script for banner typing text -->
     <script>
-    function autoType(elementClass, typingSpeed) {
+        function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
             thhis.css({
                 "position": "relative",
@@ -657,7 +625,7 @@
     <!-- //script for banner typing text -->
     <!-- disable body scroll which navbar is in active -->
     <script>
-    $(function () {
+        $(function () {
             $('.navbar-toggler').click(function () {
                 $('body').toggleClass('noscroll');
             })
@@ -665,7 +633,7 @@
     <!-- disable body scroll which navbar is in active -->
     <!-- MENU-JS -->
     <script>
-    $(window).on("scroll", function () {
+        $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
             if (scroll >= 80) {
@@ -692,3 +660,26 @@
     <!-- //MENU-JS -->
     <!-- bootstrap -->
 }
+
+
+
+@*<li class="service-link"><a href="#">Branding Design and Identity</a></li>
+    <li class="service-link"><a href="#">Mobile App Design</a></li>
+    <li class="service-link"><a href="#">Art, Logo, SVG & Illustration</a></li>
+    <li class="service-link"><a href="#">3D Modeling & Motion</a></li>
+    <li class="service-link"><a href="#">PSD Design, Photoshop</a></li>
+    <li>
+        <a>Html/CSS</a>
+        <br />
+        <br />
+        <a>JavaScript</a>
+        <br />
+        <br />
+        <a>C#</a>
+        <br />
+        <br />
+        <a>SQL</a>
+        <br />
+        <br />
+        <a>Angular</a>*@
+@*<a href="#url" class="btn btn-style btn-empty p-0">View my all services <span></span></a>*@

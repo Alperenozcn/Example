@@ -94,6 +94,7 @@
     <Content Include="Global.asax" />
     <Content Include="Theme\assets\css\style-starter.css" />
     <Content Include="Theme\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Theme\assets\images\1695626968698.jpeg" />
     <Content Include="Theme\assets\images\about.jpg" />
     <Content Include="Theme\assets\images\award.png" />
     <Content Include="Theme\assets\images\award1.png" />
@@ -107,6 +108,7 @@
     <Content Include="Theme\assets\images\client5.png" />
     <Content Include="Theme\assets\images\client6.png" />
     <Content Include="Theme\assets\images\clients.png" />
+    <Content Include="Theme\assets\images\Ekran görüntüsü 2023-09-27 213219.png" />
     <Content Include="Theme\assets\images\file.png" />
     <Content Include="Theme\assets\images\file1.png" />
     <Content Include="Theme\assets\images\file2.png" />
@@ -136,9 +138,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AnaSayfaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entities\About.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\CustomerReview.cs" />
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\Slogan.cs" />

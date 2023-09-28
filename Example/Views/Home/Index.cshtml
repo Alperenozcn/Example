@@ -171,60 +171,6 @@
 </section>
 <!-- //home page about section -->
 <!-- home page about section -->
-<section class="w3l-homeblock3" id="awards">
-    <div class="midd-w3 py-5">
-        <div class="container py-lg-5 py-md-3">
-            <div class="row">
-                <div class="col-lg-6">
-                    <span class="text">My Awards and Achievements </span>
-                    <h3 class="title-big">
-                        Professional awards and
-                        honors <span> I’ve reached.</span>
-                    </h3>
-                    <p class="mt-4">
-                        Personal awards. Having O7 Years of Experience that Motivated by the Desire to
-                        achieve Success
-                    </p>
-                    <div class="reward-list mt-5">
-                        <div class="reward-item">
-                            <div class="reward-item-photo"><img src="~/Theme/assets/images/banner.png" alt="" class="img-fluid"></div>
-                            <div class="reward-item-detail">
-                                <span class="reward-item-title">Web design awards</span>
-                                <p class="reward-item-descr">For Best UX/UI Design App</p>
-                            </div>
-                        </div>
-                        <div class="reward-item">
-                            <div class="reward-item-photo"><img src="~/Theme/assets/images/skills.png" alt="" class="img-fluid"></div>
-                            <div class="reward-item-detail">
-                                <span class="reward-item-title">Inovative ideas design Awards</span>
-                                <p class="reward-item-descr">For Most Loved Illustration </p>
-                            </div>
-                        </div>
-                        <div class="reward-item">
-                            <div class="reward-item-photo"><img src="~/Theme/assets/images/banner.png" alt="" class="img-fluid"></div>
-                            <div class="reward-item-detail">
-                                <span class="reward-item-title">Creative Design awards</span>
-                                <p class="reward-item-descr">For Best UX/UI Project Design</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 align-self mt-lg-0 mt-md-5 mt-4">
-                    <div class="position-relative px-lg-5 mx-lg-0 mx-md-5 image-padding">
-                        <img src="~/Theme/assets/images/awards.png" alt="" class="radius-image img-fluid">
-                        <div class="position-absolute-images">
-                            <img src="~/Theme/assets/images/award.png" class="img-fluid pos-img" alt="" />
-                            <img src="~/Theme/assets/images/award1.png" class="img-fluid pos-img1" alt="" />
-                            <img src="~/Theme/assets/images/award2.png" class="img-fluid pos-img2" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //home page about section -->
-<!-- home page about section -->
 <section class="w3l-clients" id="skills">
     <div class="midd-w3 py-5">
         <div class="container py-lg-5 py-md-3">
@@ -235,192 +181,34 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mt-lg-0 mt-5">
-                    <span class="text">Testimonials</span>
-                    <h3 class="title-big">What my <span>clients think</span> about Me</h3>
+                    <span class="text">Referanslarım</span>
+                    <h3 class="title-big"><span>Tecrübe</span>   edindiğim kişiler  </h3>
                     <div id="owl-demo1" class="owl-carousel owl-theme mt-4 py-2 mb-4">
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae
-                                            laudantium
-                                            voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                                            Dolores molestias adipisci dolor sit amet! by the Desire to achieve Success .
-                                        </q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <div class="test-img">
-                                            <img src="~/Theme/assets/images/team1.jpg" class="img-fluid"
-                                                 alt="client-img">
-                                        </div>
-                                        <div class="peopl align-self">
-                                            <h3>John wilson</h3>
-                                            <p class="indentity">Seattle, Washington</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae
-                                            laudantium
-                                            voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                                            Dolores molestias adipisci dolor sit amet! by the Desire to achieve Success.
-                                        </q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <div class="test-img">
-                                            <img src="~/Theme/assets/images/team2.jpg" class="img-fluid"
-                                                 alt="client-img">
-                                        </div>
-                                        <div class="peopl align-self">
-                                            <h3>Julia sakura</h3>
-                                            <p class="indentity">Seattle, Washington</p>
+
+                        @foreach (var customerReview in Model.CustomerReviews)
+                        {
+                            <div class="item">
+                                <div class="testimonial-content">
+                                    <div class="testimonial">
+                                        <blockquote>
+                                            <q>
+                                                @customerReview.Comment
+                                            </q>
+                                        </blockquote>
+                                        <div class="testi-des">
+                                            <div class="test-img">
+                                                <img src="~/Theme/assets/@customerReview.ImagePath" class="img-fluid"
+                                                     alt="client-img">
+                                            </div>
+                                            <div class="peopl align-self">
+                                                <h3>@customerReview.Fullname</h3>
+                                                @*<p class="indentity">Seattle, Washington</p>*@
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae
-                                            laudantium
-                                            voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                                            Dolores molestias adipisci dolor sit amet! by the Desire to achieve Success.
-                                        </q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <div class="test-img">
-                                            <img src="~/Theme/assets/images/team3.jpg" class="img-fluid"
-                                                 alt="client-img">
-                                        </div>
-                                        <div class="peopl align-self">
-                                            <h3>Roy Linderson</h3>
-                                            <p class="indentity">Seattle, Washington</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae
-                                            laudantium
-                                            voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                                            Dolores molestias adipisci dolor sit amet! by the Desire to achieve Success.
-                                        </q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <div class="test-img">
-                                            <img src="~/Theme/assets/images/team4.jpg" class="img-fluid"
-                                                 alt="client-img">
-                                        </div>
-                                        <div class="peopl align-self">
-                                            <h3>Mike Thyson</h3>
-                                            <p class="indentity">Seattle, Washington</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae
-                                            laudantium
-                                            voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                                            Dolores molestias adipisci dolor sit amet! by the Desire to achieve Success.
-                                        </q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <div class="test-img">
-                                            <img src="~/Theme/assets/images/team2.jpg" class="img-fluid"
-                                                 alt="client-img">
-                                        </div>
-                                        <div class="peopl align-self">
-                                            <h3>Laura gill</h3>
-                                            <p class="indentity">Seattle, Washington</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //home page about section -->
-<!-- home page about section -->
-<section class="w3l-homeblock3" id="clients">
-    <div class="midd-w3 py-5">
-        <div class="container py-lg-5 py-md-3">
-            <div class="row">
-                <div class="col-lg-6">
-                    <span class="text">My Clients and Partners </span>
-                    <h3 class="title-big">
-                        Clients / Partners and
-                        <span> Collaborations.</span>
-                    </h3>
-                    <p class="mt-4">
-                        Over the past ten years, I've been fortunate to work with and for people from some
-                        amazing organizations.
-                    </p>
-                    <div class="reward-list mt-5">
-                        <div class="reward-item">
-                            <div class="reward-item-photo">
-                                1k+
-                            </div>
-                            <div class="reward-item-detail">
-                                <span class="reward-item-title">Total CLients</span>
-                                <p class="reward-item-descr">over 18 countries</p>
-                            </div>
-                        </div>
-                        <div class="reward-item">
-                            <div class="reward-item-photo">
-                                95%
-                            </div>
-                            <div class="reward-item-detail">
-                                <span class="reward-item-title">Sensitive feedback</span>
-                                <p class="reward-item-descr">For Design quality</p>
-                            </div>
-                        </div>
-                        <div class="reward-item">
-                            <div class="reward-item-photo">
-                                150+
-                            </div>
-                            <div class="reward-item-detail">
-                                <span class="reward-item-title">Trusted sponsers</span>
-                                <p class="reward-item-descr">Featued by top rankers</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 align-self text-center mt-lg-0 mt-md-5 mt-4">
-                    <div class="images">
-                        <img src="~/Theme/assets/images/client1.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client2.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client3.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client4.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client5.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client6.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client2.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client3.png" class="img-fluid" alt="" />
-                        <img src="~/Theme/assets/images/client4.png" class="img-fluid" alt="" />
+                        }
                     </div>
                 </div>
             </div>
@@ -433,9 +221,9 @@
     <div class="midd-w3 py-5">
         <div class="container py-lg-4 py-md-3">
             <div class="contact-heading text-center">
-                <span class="text">Get in touch with Me </span>
-                <h3 class="title-big">Are you ready to <span>work together?</span></h3>
-                <p class="mt-4">Let's start a Project! Hire Me.</p>
+                <span class="text">Benimle iletişime geçmek çok kolay. </span>
+                <h3 class="title-big">Birlikte Çalışmaya <span>hazır mısın?</span></h3>
+                <p class="mt-4">Hadi bir proje yapalım.</p>
             </div>
             <div class="row mt-md-5 mt-4 pt-lg-3">
                 <div class="col-lg-5">
@@ -457,18 +245,18 @@
 
                 </div>
                 <div class="col-lg-7 mt-lg-0 mt-md-5 mt-4">
-                    <form action="https://sendmail.w3layouts.com/submitForm" method="post">
+                    <form action="@Url.Action("Contact","Home")" method="post">
                         <div class="twice-two">
-                            <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name"
+                            <input type="text" class="form-control" name="Name" id="w3lName" placeholder="Name"
                                    required="">
-                            <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email"
+                            <input type="email" class="form-control" name="Email" id="w3lSender" placeholder="Email"
                                    required="">
                         </div>
                         <div class="twice">
-                            <input type="text" class="form-control" name="w3lSubject" id="w3lSubject"
+                            <input type="text" class="form-control" name="Subject" id="w3lSubject"
                                    placeholder="Subject" required="">
                         </div>
-                        <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message"
+                        <textarea name="Message" class="form-control" id="w3lMessage" placeholder="Message"
                                   required=""></textarea>
                         <div class="text-right">
                             <button type="submit" class="btn btn-secondary btn-style mt-4">Send Message</button>

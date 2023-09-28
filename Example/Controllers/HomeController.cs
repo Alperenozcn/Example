@@ -33,6 +33,8 @@ namespace Example.Controllers
                 @sectionName = "Skills"
             },commandType: System.Data.CommandType.StoredProcedure);
 
+            var reviews = connection.Query<CustomerReview>(sql: "ap_ListCustomerReviews", commandType: System.Data.CommandType.StoredProcedure);
+
             var viewModel = new IndexViewModel();
 
             viewModel.About = about;
@@ -40,6 +42,7 @@ namespace Example.Controllers
             viewModel.Services = services;
             viewModel.ServiceSlogan = serviceSlogan;
             viewModel.SkillSlogan = skillSlogan;
+            viewModel.CustomerReviews = reviews;
 
             //List<Skill> skills = new List<Skill>();
             //skills.AddDuplicate(new Skill() { Id = 1, Rate = 70, Title = "Bu kayıttan iki tane olması lazım" });
@@ -80,7 +83,13 @@ namespace Example.Controllers
 
             return View(viewModel);
         }
-
+        [HttpPost]
+        public ActionResult Contact(Contact contact)
+        {
+            SqlConnection connection = new SqlConnection("server=ALPEREN\\ALPERENMSSQL; database=CvDb; integrated security=true");
+            var affectedRows = connection.Execute(sql: "ap_CreateContact", commandType: System.Data.CommandType.StoredProcedure, param:contact);
+            return RedirectToAction("Index");
+        }
         public ActionResult Portfolio()
         {
             SqlConnection connection = new SqlConnection("server=ALPEREN\\ALPERENMSSQL; database=CvDb; integrated security=true");
@@ -101,10 +110,10 @@ namespace Example.Controllers
             reader.Close();
             return View();
         }
-        public ActionResult Contact()
-        {
-            return View();
-        }
+        //public ActionResult Contact()
+        //{
+        //    return View();
+        //}
 
         public string GetFirstElementName(List<Product>products)
         {

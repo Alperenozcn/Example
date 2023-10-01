@@ -90,6 +90,12 @@ namespace Example.Controllers
             var affectedRows = connection.Execute(sql: "ap_CreateContact", commandType: System.Data.CommandType.StoredProcedure, param:contact);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Contact()
+        {
+            return View();
+        }
         public ActionResult Portfolio()
         {
             SqlConnection connection = new SqlConnection("server=ALPEREN\\ALPERENMSSQL; database=CvDb; integrated security=true");
@@ -97,9 +103,15 @@ namespace Example.Controllers
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.CommandText = "ap_ListSlogan";
-            command.Parameters.Add("@sectionName","Skills");
+            command.Parameters.Add("@sectionName", "Skills");
 
             connection.Open();
+
+            //var portfolio = connection.Query<Portfolio>(sql: "ap_CreateStudy", commandType: System.Data.CommandType.StoredProcedure);
+
+            //var viewModel = new IndexViewModel();
+            //viewModel.Portfolios = portfolio;
+
             var reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -110,10 +122,7 @@ namespace Example.Controllers
             reader.Close();
             return View();
         }
-        //public ActionResult Contact()
-        //{
-        //    return View();
-        //}
+
 
         public string GetFirstElementName(List<Product>products)
         {

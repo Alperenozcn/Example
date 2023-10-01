@@ -1,4 +1,4 @@
-﻿
+﻿@model Example.Models.IndexViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -58,109 +58,57 @@
     <div class="midd-w3 py-5">
         <div class="container py-lg-4 py-md-3">
             <div class="contact-heading text-center mb-5">
-                <span class="text">My Portfolio </span>
-                <h3 class="title-big">Some of my <span>Latest works</span></h3>
+                <span class="text">Projelerim</span>
+                <h3 class="title-big">Son <span> çalışmalarım</span></h3>
             </div>
-            <div id="owl-portfolio" class="owl-carousel owl-theme mt-4 py-md-2 mb-4">
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template1.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Digital - Corporate Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
+            @*<div id="owl-portfolio" class="owl-carousel owl-theme mt-4 py-md-2 mb-4">*@
+
+                    <div class="item">
+                        <div class="portfolio-content">
+                            <a href="#url" class="grid-anchor">
+                                <div class="col-md-6">
+                                    <img src="~/Theme/assets/images/task_chat.jpg" class="img-fluid" alt="" />
+                                    <div class="col-md-12">
+                                        <div class="template-info">
+                                            <h3>TaskChat</h3>
+                                            <p class="description">C#,OOP,MSSQL</p>
+                                            <p class="description">
+                                                Windows Forms kullanarak hazırladığımız C# tabanlı N katmanlı mimariye sahip TaskChat projemizin özellikleri;
+
+                                                Süper Admin:
+                                                •Yeni firma ile birlikte firma sahibi olan kullanıcıyı kayıt edebiliyor ve düzenleyebiliyor.
+
+                                                General Manager:
+                                                •Sahibi olduğu firmaya departman ekleyebiliyor, düzenleyebiliyor.
+                                                •Departmanlara Team Lead ekleyebiliyor, düzenleyebiliyor.
+                                                •Departmanlara Personel ekleyebiliyor, düzenleyebiliyor.
+                                                •Departman Team Lead'lerine görev atayabiliyor.
+                                                •Genel Mesajlaşma kategorisine ve Yönetim kategorisine anlık mesaj gönderebiliyor.
+
+                                                Team Lead:
+                                                •General Manager'ın atadığı görevleri görebiliyor.
+                                                •Kendi departmanındaki personellere görev ataması yapabiliyor.
+                                                •Atamış olduğu yapımına devam edilen ve tamamlanan görevleri görebiliyor.
+                                                •Tamamlanan görevlere onay verebiliyor ya da yeniden düzenlenmesini talep edebiliyor.
+                                                •Genel Mesajlaşma ve kendi departmanına ait mesajlaşma kategorisine anlık mesaj gönderebiliyor.
+
+                                                Departman Çalışanı :
+                                                •Team Lead'in kendisine atadığı görevleri görebiliyor.
+                                                •Görev içerisinde değişiklik yaptığında, göreve Güncelleme Mesajı ekleyebiliyor.
+                                                •Görevi tamamladığında Team Lead onayına gönderebiliyor.
+                                                •Genel Mesajlaşma ve kendi departmanına ait mesajlaşma kategorisine anlık mesaj gönderebiliyor.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                        
+
+</a>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template2.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Solutions - Corporate Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template3.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Medpill - Medical Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template4.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Digital - Corporate Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template5.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Solutions - Corporate Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template6.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Medpill - Medical Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template7.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Digital - Corporate Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template8.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Solutions - Corporate Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="portfolio-content">
-                        <a href="#url" class="grid-anchor">
-                            <img src="~/Theme/assets/images/template3.jpg" class="img-fluid" alt="" />
-                            <div class="template-info">
-                                <h3>Medpill - Medical Template</h3>
-                                <p class="description">Html template</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                
+
+
             </div>
         </div>
     </div>
@@ -168,7 +116,7 @@
 <!-- //home page contact section -->
 @section scripts{
     <script>
-    // When the user scrolls down 20px from the top of the document, show the button
+        // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction()
         };
@@ -196,7 +144,7 @@
 
     <!-- script for tesimonials carousel slider -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $("#owl-demo1").owlCarousel({
                 loop: true,
                 nav: false,
@@ -216,7 +164,7 @@
     <!-- //script for tesimonials carousel slider -->
     <!-- script for portfolio slider -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $("#owl-portfolio").owlCarousel({
                 loop: true,
                 margin: 20,
@@ -241,7 +189,7 @@
     <!-- //script for portfolio slider -->
     <!-- script for featured posts blog slider -->
     <script>
-    $(document).ready(function () {
+        $(document).ready(function () {
             $('.owl-testimonial').owlCarousel({
                 loop: true,
                 margin: 0,
@@ -274,7 +222,7 @@
     <!-- //script for featured posts blog slider -->
     <!-- script for banner typing text -->
     <script>
-    function autoType(elementClass, typingSpeed) {
+        function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
             thhis.css({
                 "position": "relative",
@@ -310,7 +258,7 @@
     <!-- //script for banner typing text -->
     <!-- disable body scroll which navbar is in active -->
     <script>
-    $(function () {
+        $(function () {
             $('.navbar-toggler').click(function () {
                 $('body').toggleClass('noscroll');
             })
@@ -318,7 +266,7 @@
     <!-- disable body scroll which navbar is in active -->
     <!-- MENU-JS -->
     <script>
-    $(window).on("scroll", function () {
+        $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
             if (scroll >= 80) {

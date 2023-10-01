@@ -125,6 +125,7 @@
     <Content Include="Theme\assets\images\template6.jpg" />
     <Content Include="Theme\assets\images\template7.jpg" />
     <Content Include="Theme\assets\images\template8.jpg" />
+    <Content Include="Theme\assets\images\task_chat.jpg" />
     <Content Include="Theme\assets\images\WhatsApp Image 2022-10-05 at 12.50.48.jpeg" />
     <Content Include="Theme\assets\js\bootstrap.min.js" />
     <Content Include="Theme\assets\js\jquery-3.3.1.min.js" />
@@ -139,9 +140,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\CustomerReview.cs" />
+    <Compile Include="Entities\Portfolio.cs" />
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\Slogan.cs" />
@@ -166,6 +169,9 @@
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Test.cshtml" />
+    <Content Include="Views\Shared\ContactView.cshtml" />
+    <Content Include="Views\Partial\Products.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
